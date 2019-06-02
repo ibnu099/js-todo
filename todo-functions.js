@@ -1,7 +1,12 @@
 //fetch existing todos from localstorage
 const getSavedTodos =  () => {
     const todosString = localStorage.getItem('todos')
-    return todosString ? JSON.parse(todosString) : []
+    try {
+        return todosString ? JSON.parse(todosString) : []
+    } catch (error) {
+        return []
+    }
+    
 }
 
 //Save todos to LocalStorage
