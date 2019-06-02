@@ -9,13 +9,13 @@ const filters = {
 renderTodos(todos, filters)
 
 //listener for input
-document.querySelector('#search-todo').addEventListener('input', function (e) {
+document.querySelector('#search-todo').addEventListener('input', (e) => {
     filters.searchText = e.target.value
     renderTodos(todos, filters)
 })
 
 //listener submit
-document.querySelector('#form-addTodo').addEventListener('submit', function(e){
+document.querySelector('#form-addTodo').addEventListener('submit', (e) => {
     //prevent default, agar tidak refresh dan menaruh input di url.
     e.preventDefault()
     
@@ -38,20 +38,7 @@ document.querySelector('#form-addTodo').addEventListener('submit', function(e){
 })
 
 //listenerr checkbox
-document.querySelector('#hide-completed').addEventListener('change', function(e){
+document.querySelector('#hide-completed').addEventListener('change', (e) =>{
     filters.hideCompleted = e.target.checked
     renderTodos(todos, filters)
 })
-
-/* challange 1
-const ps = document.querySelectorAll('p')
-ps.forEach(function (p){
-    console.log(p.textContent)
-    // if (p.textContent.indexOf('lay') >= 0){
-    //     p.remove()
-    // }
-
-    if(p.textContent.includes('lay')){
-        p.remove()
-    }
-})*/
